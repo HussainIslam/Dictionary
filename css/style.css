@@ -4,10 +4,24 @@
 /* Class Elements */
 .divMain {
   border: 1px solid black;
+  width: 45%;
+  float: left;
+  
 }
 
 
 /* ID Elements */
+#main{
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#result{
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 #container{
   display: flex;
   flex-direction: column;
