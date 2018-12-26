@@ -33,6 +33,12 @@ function inputValidation(input){
   return valid;
 }
 
+function stringCleaner(text){
+  let regDef = /\{.{0,}\}/;
+  let finalString = text.replace(regDef.exec(text),"");
+  return finalString;
+}
+
 function manipulation(response){
   console.log(response);
   let divMain = document.createElement('div');
@@ -41,6 +47,7 @@ function manipulation(response){
 
   let theWord = document.createElement('h3');
   theWord.innerText = response.meta.id;
+  theWord.id = "theWord";
   divMain.appendChild(theWord);
 
   let functionalLabel = document.createElement("p");
@@ -55,5 +62,10 @@ function manipulation(response){
   }
   divMain.appendChild(pronunciation);
 
+  let definition = document.createElement("p");
+  definition.innerText = stringCleaner(response.meta["app-shortdef"].def[0]);
+  
+  //definition.innerText = response.meta["app-shortdef"].def[0];
+  divMain.appendChild(definition);
 
 }

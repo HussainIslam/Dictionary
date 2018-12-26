@@ -25,6 +25,7 @@
   background-color: white;
   text-align: center;
   font-size: 2em;
+  
 }
 
 #submitButton{
@@ -32,6 +33,12 @@
   height: 25px;
   color: darkblue;
   background-color: aqua;
-  border: 1px solid deepskyblue;
+}
 
+#theWord{
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px){
+  
 }
