@@ -2,8 +2,19 @@ var inputText = document.querySelector("#inputText");
 var submitButton = document.querySelector("#submitButton");
 var result = document.querySelector("#result");
 submitButton.addEventListener("click", submitQuery);
+window.addEventListener('keypress', submitQueryEnter);
+
+function submitQueryEnter(event){
+  if(event.keyCode == 13){
+    submitQuery();
+  }
+}
 
 function submitQuery(){
+  while(result.childNodes.length > 0){
+    result.removeChild(result.firstChild);
+  }
+ 
   var valid = inputValidation(inputText);
   if(valid){
     var ajax = new XMLHttpRequest();
@@ -21,6 +32,8 @@ function submitQuery(){
   } else {
     alert("Please enter a valid word!");
   }
+
+  inputText.value = "";
 
 }
 
@@ -40,7 +53,7 @@ function stringCleaner(text){
 }
 
 function manipulation(response){
-  console.log(response);
+  //console.log(response);
   let divMain = document.createElement('div');
   divMain.classList = "divMain";
   result.appendChild(divMain);
