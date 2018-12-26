@@ -29,7 +29,7 @@
 }
 
 #submitButton{
-  width: 10%;
+  width: 100px;
   height: 25px;
   color: darkblue;
   background-color: aqua;
@@ -39,6 +39,23 @@
   text-transform: uppercase;
 }
 
+
+
 @media (max-width: 600px){
-  
+  #inputText{
+    width: 90%;
+    height:20px;
+    background-color: white;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+  }
+
+  #submitButton{
+    width: 100px ;
+    height: 25px;
+    color: darkblue;
+    background-color: aqua;
+  }
+
 }

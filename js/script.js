@@ -64,8 +64,6 @@ function manipulation(response){
 
   let definition = document.createElement("p");
   definition.innerText = stringCleaner(response.meta["app-shortdef"].def[0]);
-  
-  //definition.innerText = response.meta["app-shortdef"].def[0];
   divMain.appendChild(definition);
 
 }
